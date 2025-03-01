@@ -1,12 +1,13 @@
-# templ Syntax for vim
+# templ config for vim
 
-This is a syntax file for editing [templ](https://github.com/a-h/templ) files in vim. 
+Vim config for editing [templ](https://github.com/a-h/templ) files in vim.
 
-Heavily used [ejs-syntax](https://github.com/nikvdp/ejs-syntax/) as reference.
+Forked from [joerdav/templ.vim](https://github.com/joerdav/templ.vim).
 
-To use with Vundle just add:
+Changes compared to the fork:
+* Indent config has been updated to match Go indent
+* Add [tcomment_vim](https://github.com/tomtom/tcomment_vim) support
 
-    Bundle 'joerdav/templ.vim'
+To install with [vim-plug](https://github.com/junegunn/vim-plug), add to your `.vimrc`:
 
-to your .vimrc. 
-
+    Plug 'iefserge/templ.vim'
