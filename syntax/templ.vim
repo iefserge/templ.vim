@@ -27,7 +27,7 @@ unlet b:current_syntax
 
 " templ
 syn match templTemplateDec    /^templ/ nextgroup=templReceiverDecl,templFunction skipwhite skipnl
-syn match templReceiverDecl      /(\s*\zs\%(\%(\w\+\s\+\)\?\*\?\w\+\%(\[\%(\%(\[\]\)\?\w\+\%(,\s*\)\?\)\+\]\)\?\)\ze\s*)/ contained contains=goReceiverVar,goReceiverType,goPointerOperator nextgroup=templFunction skipwhite skipnl
+syn match templReceiverDecl      /(\s*\%(\w\+\s\+\)\?\*\?\s*\w\+\%(\[\%(\%(\[\]\)\?\w\+\%(,\s*\)\?\)\+\]\)\?\s*)\ze\s*\w/ contained contains=goReceiverVar,goReceiverType,goPointerOperator nextgroup=templFunction skipwhite skipnl
 syn match templFunction          /\w\+/ nextgroup=templSimpleParams,templTypeParams contained skipwhite skipnl
 syn match templSimpleParams      /(\%(\w\|\_s\|[*\.\[\],\{\}<>-]\)*)/ contained contains=goParamName,goType nextgroup=templTemplateBlock skipwhite skipnl
 syn match templTypeParams        /\[\%(\w\+\s\+\%(\~\?\%(\[]\)\?\w\%(\w\||\)\)*\%(,\s*\)\?\)\+\]/ nextgroup=templSimpleParams contained skipwhite skipnl
