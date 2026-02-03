@@ -46,17 +46,19 @@ Add ALE keybindings and override "Go to Definition" for Go files:
 ```vim
 augroup ale_keybindings
 autocmd!
-  autocmd FileType * nmap <buffer> gd :ALEGoToDefinition<CR>
-  autocmd FileType * nmap <buffer> gr :ALEFindReferences<CR>
-  autocmd FileType * nmap <buffer> gi :ALEGoToImplementation<CR>
-  autocmd FileType * nmap <buffer> gt :ALEGoToTypeDefinition<CR>
-  autocmd FileType * nmap <buffer> K :ALEHover<CR>
-  autocmd FileType * nmap <buffer> <leader>rn :ALERename<CR>
-  autocmd FileType * nmap <buffer> <leader>ca :ALECodeAction<CR>
-  autocmd FileType * nmap <buffer> [d :ALEPrevious<CR>
-  autocmd FileType * nmap <buffer> ]d :ALENext<CR>
-  autocmd FileType * nmap <buffer> <leader>f :ALEFix<CR>
+  autocmd FileType templ nmap <buffer> gd :ALEGoToDefinition<CR>
+  autocmd FileType templ nmap <buffer> gr :ALEFindReferences<CR>
+  autocmd FileType templ nmap <buffer> gi :ALEGoToImplementation<CR>
+  autocmd FileType templ nmap <buffer> gt :ALEGoToTypeDefinition<CR>
+  autocmd FileType templ nmap <buffer> K :ALEHover<CR>
+  autocmd FileType templ nmap <buffer> <leader>rn :ALERename<CR>
+  autocmd FileType templ nmap <buffer> <leader>ca :ALECodeAction<CR>
+  autocmd FileType templ nmap <buffer> [d :ALEPrevious<CR>
+  autocmd FileType templ nmap <buffer> ]d :ALENext<CR>
+  autocmd FileType templ nmap <buffer> <leader>f :ALEFix<CR>
   " Go override (go -> templ)
   autocmd FileType go nmap <buffer> gd :call TemplGoToDefinition()<CR>
 augroup END
 ```
+
+Optionally, replace `FileType templ` with `FileType *` to enable ALE keybindings in all files.
